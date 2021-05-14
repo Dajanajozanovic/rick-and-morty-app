@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import './Card.js'
 import Card from './Card.js'
+import Header from './Header.js'
 
 export default function App() {
   const [characters, setCharacters] = useState([])

@@ -1,4 +1,6 @@
 .Card {
+  background-color: rgb(24, 24, 53);
+  color: whitesmoke;
   display: grid;
   padding: 20px;
   justify-items: center;

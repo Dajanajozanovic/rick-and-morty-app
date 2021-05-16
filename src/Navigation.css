@@ -3,4 +3,6 @@
   color: grey;
   border-radius: 5px;
   padding: 8px;
+  position: sticky;
+  top: 0;
 }

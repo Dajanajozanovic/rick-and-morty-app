@@ -13,3 +13,11 @@
 .Button:hover {
   background: grey;
 }
+
+.Card__button {
+  background-color: rgb(255, 119, 0);
+  color: black;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}

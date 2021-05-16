@@ -1,6 +1,8 @@
-.Nav__Button {
-  background-color: greenyellow;
-  color: grey;
+.nav__Button {
+  background-color: rgb(255, 119, 0);
+  color: black;
+  border: none;
+  font-weight: bold;
   border-radius: 5px;
   padding: 8px;
   position: sticky;

@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import './App.css'
@@ -7,9 +6,8 @@ import Card from './Card.js'
 import Header from './Header.js'
 import Navigation from './Navigation.js'
 import background from './images/background.jpg'
-import React, { useState, useEffect } from 'react'
 import './App.css'
-
+import Button from './Button'
 
 export default function App() {
   const url = 'https://rickandmortyapi.com/api/character'
@@ -17,13 +15,10 @@ export default function App() {
 
   const [isActive, setIsActive] = useState({ characters: true })
 
-
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
-< Button
-      .then(res => setCharacters(res.results))
-      .catch(error => console.error(error))
+      .then(resBody => setCharacters(resBody.results))
   }, [url])
 
   return (
@@ -58,18 +53,4 @@ export default function App() {
     obj[value] = true
     setIsActive(obj)
   }
-
-      .then(resBody => setCharacters(resBody.results))
-  }, [url])
-
-  return (
-    <div className="App">
-      <ul>
-        {characters.map(el => (
-          <li>{el.name}</li>
-        ))}
-      </ul>
-    </div>
-  )
-
 }

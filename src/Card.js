@@ -9,7 +9,7 @@ export default function Card({ name, image, status, species, gender }) {
       <h2>{name}</h2>
 
       <div className="Card__image">
-        <img src={image} alt="" />
+        <img className="Card__image--cards" src={image} alt="" />
       </div>
 
       <button className="Card__button" onClick={() => setIsActive(!isActive)}>

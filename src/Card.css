@@ -24,3 +24,14 @@
 .Card-list {
   list-style-type: none;
 }
+
+.Card__image {
+  width: auto;
+  justify-content: center;
+}
+
+.Card__image--cards {
+  max-width: 250px;
+  border-radius: 200px;
+  border: 1px solid #333;
+}

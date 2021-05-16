@@ -1,17 +1,28 @@
 import './Card.css'
+import { useState } from 'react'
 
 export default function Card({ name, image, status, species, gender }) {
+  const [isActive, setIsActive] = useState(false)
+
   return (
-    <section className="Card">
+    <section className={(species = 'Alien' ? 'Card Card--alien' : 'Card')}>
       <h2>{name}</h2>
 
-      <ul className="Card-list">
-        <li>
-          <img src={image} alt="" className="image" />
-        </li>
-        <li>Status: {status}</li>
-        <li>Species: {species}</li>
-      </ul>
+      <div className="Card__image">
+        <img src={image} alt="" />
+      </div>
+
+      <button className="Card__button" onClick={() => setIsActive(!isActive)}>
+        {isActive ? 'hide Infos' : 'Show Infos'}
+      </button>
+
+      {isActive && (
+        <ul className="Card-list">
+          <li>Status: {status}</li>
+          <li>Species: {species}</li>
+          <li>Gender: {gender}</li>
+        </ul>
+      )}
     </section>
   )
 }

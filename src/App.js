@@ -1,36 +1,53 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import './Card.js'
 import Card from './Card.js'
 import Header from './Header.js'
+import Navigation from './Navigation.js'
 
 export default function App() {
-  const [characters, setCharacters] = useState([])
-
   const url = 'https://rickandmortyapi.com/api/character'
+  const [characters, setCharacters] = useState([])
+  const [isActive, setIsActive] = useState({ characters: true })
 
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(res => setCharacters(res.results))
       .catch(error => console.error(error))
-  }, [])
+  }, [url])
 
-  console.log(characters)
   return (
-    <div>
-      {characters.map(character => {
-        return (
-          <Card
-            key={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            image={character.image}
-          />
-        )
-      })}
+    <div className="App">
+      <Header />
+
+      <Navigation isActive={isActive} handleClick={handleClick} />
+
+      <section className="App__main">
+        {isActive.characters &&
+          characters.map(rickandmorty => {
+            const { name, species, gender, id, image, status } = rickandmorty
+            return (
+              <Card
+                key={id}
+                name={name}
+                species={species}
+                image={image}
+                gender={gender}
+                isActive={isActive}
+                status={status}
+              />
+            )
+          })}
+      </section>
     </div>
   )
+
+  function handleClick(event) {
+    const value = event.target.name
+    const obj = { characters: false }
+    obj[value] = true
+    setIsActive(obj)
+  }
 }

@@ -1,7 +1,7 @@
 .Card {
   display: grid;
   padding: 20px;
-
+  justify-items: center;
   margin: 20px;
   border-radius: 80px;
   max-width: 300px;
@@ -17,11 +17,6 @@
     -9px 21px 18px 0px #fff212, -9px 6px 11px 0px #ff0808,
     -11px -9px 11px 0px #fffa17, -11px -9px 11px 0px #fffa17,
     28px -25px 18px 0px rgba(0, 0, 0, 0);
-}
-
-img {
-  max-width: 100px;
-  list-style-type: none;
 }
 
 .Card-list {

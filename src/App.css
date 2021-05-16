@@ -1,6 +1,17 @@
 .App {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  background-image: ;
+}
+
+.App__main {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 20px;
+
 }
